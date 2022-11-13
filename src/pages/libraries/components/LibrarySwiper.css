@@ -7,8 +7,8 @@
 } */
 
 .libswiper .swiper-slide {
-  margin-left: 20px;
-  padding-right: 20px;
+  margin-left: 1%;
+  padding-right: 1%;
   min-width: 150px;
   max-width: 150px;
   display: flex;

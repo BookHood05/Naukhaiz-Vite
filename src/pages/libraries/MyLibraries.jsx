@@ -82,9 +82,9 @@ function MyLibraries() {
     { filename: "file8", link: "https://www.google.com/", ext: "" },
   ];
   const cardStyle = {
-    mx: "6%",
+    mx: "5%",
     marginTop: 5,
-    width: "88%",
+    width: "90%",
     border: 1,
     borderRadius: 6,
     minHeight: 220,
