@@ -1,0 +1,75 @@
+.filter-container {
+  border-radius: 8px !important;
+  box-shadow: 3px 3px 6px 3px rgba(77, 100, 141, 0.4) !important;
+}
+
+.accordion-heading {
+  font-weight: bolder !important;
+  color: #d0e1f9 !important;
+  background-color: #4d648d !important;
+}
+
+.filter-chip {
+  background-color: #d0e1f9 !important;
+  color: #4d648d !important;
+  font-weight: 500 !important;
+  font-size: 15px !important;
+  margin: 0 5px 0 5px !important;
+}
+
+@media screen and (max-width: 500px) {
+  .filter-chip {
+    font-size: 13px !important;
+  }
+}
+
+.price-filter {
+  color: #283655;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.connection-filter.MuiToggleButton-root.Mui-selected {
+  background-color: #4d648d !important;
+  color: white !important;
+}
+
+.filter-tabs {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #4d648d !important;
+}
+
+#outlined-number {
+  padding: 0px 5px 5px 5px !important;
+  margin: 0 px;
+  height: 33px !important;
+  color: 1px solid #283655 !important;
+  width: 100% !important;
+}
+
+.location-btn:hover {
+  background-color: #d0e1f9 !important;
+}
+.location-btn .MuiTouchRipple-child {
+  background-color: #283655 !important;
+}
+
+.chip-div {
+  position: absolute;
+  top: 8px;
+  max-width: 88%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  margin-bottom: 2px;
+}
+
+.chip-div::-webkit-scrollbar {
+  height: 3px;
+}
+
+.chip-div::-webkit-scrollbar-thumb {
+  background: #283655;
+  border-radius: 5px;
+}

@@ -1,0 +1,56 @@
+.MuiListItemText-root {
+  font-weight: bolder;
+}
+.chat_head {
+  margin-right: 20px !important;
+}
+
+.message {
+  padding: 10px;
+  overflow-wrap: break-word;
+  width: fit-content;
+  z-index: 2 !important;
+  box-shadow: none;
+  max-width: 70%;
+}
+.sender_message {
+  max-width: 70%;
+  padding: 10px;
+  background-color: #d0e1f9 !important;
+  margin-right: -10px;
+  overflow-wrap: break-word;
+  width: fit-content;
+  z-index: 2 !important;
+  float: right !important;
+}
+.chat_card {
+  font-weight: 100 !important;
+  position: relative;
+}
+.chat_time {
+  text-align: center;
+  opacity: 0.8;
+  padding-top: 20px;
+  font-size: small;
+}
+
+.message_bg_sender {
+  color: #fff;
+  border-top: 20px solid;
+  border-right: 20px solid transparent;
+  position: absolute;
+  margin-left: -10px;
+  margin-bottom: -3.4%;
+  rotate: 90deg;
+  float: right;
+}
+.message_bg_receiver {
+  float: right;
+  color: #d0e1f9;
+  border-top: 20px solid;
+  border-right: 20px solid transparent;
+}
+
+.messages {
+  float: right;
+}

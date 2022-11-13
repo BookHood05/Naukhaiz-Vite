@@ -1,0 +1,119 @@
+.book-container:hover {
+  transform: scale(1.03);
+}
+
+.book-container {
+  margin-bottom: 30px;
+}
+
+.book-spring {
+  height: 245px;
+  width: 6%;
+  margin-top: 20px;
+  margin-left: -4%;
+  z-index: 10;
+}
+
+.book-container:hover .book-spring {
+  -webkit-animation-name: book-spring;
+  animation-name: book-spring;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes book-spring {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes book-spring {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.book-img {
+  height: 280px !important;
+  margin-left: -10% !important;
+  border-top-left-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+}
+.book-img img {
+  margin-left: -10%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.book-owner-chip {
+  color: white !important;
+}
+
+.buy-btn {
+  color: "#d0e1f9" !important;
+  background-color: #4d648d !important;
+  border-radius: 8px !important;
+}
+
+.sell-btn {
+  font-size: 15px !important;
+  color: "#d0e1f9" !important;
+  background-color: #4d648d !important;
+  border-radius: 8px !important;
+}
+
+.book-connector {
+  width: 3px !important;
+  height: 5px !important;
+}
+
+.book-spring-expanded {
+  height: 315px;
+  width: 7%;
+  margin-top: 20px;
+  margin-left: -3%;
+  z-index: 9999;
+  overflow: visible;
+}
+
+.book-img-expanded {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.book-info-chip {
+  background-color: #d0e1f9 !important;
+  color: #4d648d !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  margin: 0 5px 0 5px !important;
+  border: 1.2px solid #4d648d !important;
+  width: 90% !important;
+}
+
+.dialogue-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.dialogue-content::-webkit-scrollbar-thumb {
+  background: #283655;
+  border-radius: 5px;
+}
+
+.close-btn {
+  color: #283655 !important;
+}

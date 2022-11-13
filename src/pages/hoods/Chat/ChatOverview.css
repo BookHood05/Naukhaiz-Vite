@@ -1,0 +1,22 @@
+.MuiListItemText-root {
+  font-weight: bolder;
+}
+.chat_head {
+  margin-right: 10px !important;
+}
+
+.message {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.chat_time {
+  opacity: 0.6;
+  font-size: small;
+}
+
+.overview_bg {
+  background-color: #d0e1f960 !important;
+}

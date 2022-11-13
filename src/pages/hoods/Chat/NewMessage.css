@@ -1,0 +1,105 @@
+.new_message_box {
+  /* background-color: #d1d7e2 !important; */
+  /* color: white; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.picker_container {
+  position: relative;
+  width: 300px;
+}
+
+.emoji_icon {
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 5px;
+}
+
+.input_style {
+  padding: 7px 30px 7px 10px;
+  width: calc(100% - 40px);
+  border-radius: 3px;
+  border: 1px solid #999;
+  margin-bottom: 10px;
+}
+
+.EmojiPickerReact .Flex.FlexRow {
+  display: none !important;
+  flex-direction: row !important;
+}
+
+aside.EmojiPickerReact.epr-main:has(input:placeholder-shown) .epr-category-nav {
+  background-position-y: calc(var(--epr-category-navigation-button-size) * 3);
+  padding: 3px 8px;
+}
+
+.EmojiPickerReact li.epr-emoji-category > .epr-emoji-category-content {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0px;
+  padding: 0px;
+}
+
+.epr-main {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 69% !important;
+  min-height: 150px !important;
+  height: 172px !important;
+  margin: 0 !important;
+  margin-bottom: 218.5px !important;
+  position: absolute !important;
+  border-radius: 0px !important;
+  border: 0px !important;
+}
+@media screen and (min-width: 900px) {
+  .epr-main {
+    width: 69.2% !important;
+  }
+}
+@media screen and (max-width: 900px) {
+  .epr-main {
+    width: 58.32% !important;
+  }
+}
+@media screen and (max-width: 601px) {
+  .epr-main {
+    width: 100% !important;
+  }
+}
+
+.epr-emoji-category-label {
+  height: 20px !important;
+  padding: 0px 10px !important;
+  background-color: #d1d7e2e2 !important;
+}
+
+.epr-category-nav {
+  background-color: #d1d7e26f !important;
+}
+.epr-emoji-category {
+  background-color: #d1d7e26f !important;
+}
+.css-59ixfr-MuiPaper-root {
+  background-color: #d0e1f9 !important;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+  margin-left: 10px;
+}
+
+.css-yz9k0d-MuiInputBase-input {
+  padding: 4px 0 5px 10px !important;
+}
+
+.epr-hidden-on-search {
+  display: none !important;
+}
+
+.EmojiPickerReact button.epr-cat-btn.epr-icn-suggested {
+  display: none !important;
+}

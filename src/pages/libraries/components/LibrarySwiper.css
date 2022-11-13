@@ -1,0 +1,41 @@
+.libswiper .swiper {
+  width: 100%;
+  height: 190px;
+}
+/* .swiper-wrapper {
+  margin-left: 20px;
+} */
+
+.libswiper .swiper-slide {
+  margin-left: 20px;
+  padding-right: 20px;
+  min-width: 150px;
+  max-width: 150px;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+
+  align-items: center;
+}
+
+/* .swiper-button-next:after, */
+.swiper-button-prev:after {
+  color: #4d648d;
+}
+.swiper-button-next:after {
+  color: #4d648d;
+}
+
+@media screen and (max-width: 500px) {
+  .libswiper .swiper-slide {
+    margin-left: 0px;
+    padding-right: 0px;
+    min-width: 50%;
+    max-width: 50%;
+  }
+}

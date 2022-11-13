@@ -1,0 +1,96 @@
+.libComponents {
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+div {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+}
+div::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+.fileCard:hover {
+  background-color: #d0e1f9;
+  scale: 110%;
+  transition: all 0.3s;
+}
+.folderCard:hover {
+  background-color: #d0e1f9;
+  scale: 110%;
+  transition: all 0.3s;
+}
+
+.folderCardSelected {
+  background-color: #d0e1f9 !important;
+}
+.fileButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 16px;
+}
+.fileBtn:hover {
+  background-color: #283655 !important;
+  color: white !important;
+}
+
+.fileCard:hover .fileButtons {
+  display: flex;
+  transition: all 0.5s;
+}
+
+.folderContent {
+  display: flex;
+}
+
+.showFiles {
+  display: inline-block;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+.addContent:hover {
+  transition: all 0.3s;
+  scale: 110%;
+}
+.addContent {
+  display: inline-block;
+  flex-direction: row;
+}
+.addContentButtons {
+  display: flex;
+  flex-direction: column;
+}
+.addContentButtons:hover {
+  scale: 107%;
+  transition: all 0.3s;
+}
+.addContentDialog {
+  display: flex;
+  flex-direction: row;
+}
+.fileAdd {
+  display: flex;
+  flex-direction: column;
+}
+.infoBtn:hover {
+  scale: 109%;
+  transition: all 0.3s;
+}
+
+.swiper-heading {
+  font-weight: bolder !important;
+  color: white !important;
+  background-color: #304569 !important;
+  letter-spacing: 0.04cm !important;
+  top: 0px !important;
+  position: static !important;
+}
+
+.libOwnerChip {
+  color: white !important;
+  background-color: #283655 !important;
+}

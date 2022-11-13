@@ -1,0 +1,18 @@
+.chat_header {
+  background-color: #4d648d;
+  color: white;
+  position: sticky;
+  width: 100%;
+  top: 0px;
+  bottom: 0px;
+  z-index: 2;
+}
+.chat_title {
+  margin-left: 12px;
+}
+
+.more_options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

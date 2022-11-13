@@ -1,0 +1,56 @@
+.libsearchwrapper {
+  width: 100%;
+  margin-top: 35px;
+}
+
+.libsearchbox {
+  padding: 8px 40px 8px 40px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 6px 3px rgba(77, 100, 141, 0.4);
+}
+.libsearchbox [class*="col-"] {
+  padding: 0px;
+}
+.libsearchbox .col-md-11,
+.libsearchbox .col-md-3 {
+  padding-top: 8px;
+  padding-bottom: 6px;
+}
+
+.libsearchbox .form-control {
+  outline: none;
+}
+
+.libsearchbox .form-control {
+  border-color: transparent;
+  width: 95%;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.libsearch-btn {
+  padding-top: 8px !important;
+  padding-bottom: 6px !important;
+  border-radius: 8px !important;
+  width: 130% !important;
+  background-color: #324a74 !important;
+  color: white !important;
+  font-weight: bolder !important;
+  font-size: 15px !important;
+}
+
+@media (max-width: 767px) {
+  .libsearch-btn {
+    width: 100% !important;
+    margin-left: -5px !important;
+  }
+  .libsearchbox {
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 600px) {
+  .libsearch-btn {
+    width: 130% !important;
+  }
+}

@@ -1,0 +1,64 @@
+.hood-container:hover {
+  transform: scale(1.03);
+}
+
+.hood-container {
+  margin-bottom: 30px;
+}
+
+.hood-spring {
+  height: 230px;
+  width: 6%;
+  margin-top: 20px;
+  margin-left: -4%;
+  z-index: 10;
+}
+
+.hood-container:hover .hood-spring {
+  -webkit-animation-name: book-spring;
+  animation-name: book-spring;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes hood-spring {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes hood-spring {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.hood-img {
+  margin-left: -10%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.hood-owner-chip {
+  color: white !important;
+}
+
+.connect-btn {
+  color: "#d0e1f9" !important;
+  background-color: #4d648d !important;
+  border-radius: 8px !important;
+}
