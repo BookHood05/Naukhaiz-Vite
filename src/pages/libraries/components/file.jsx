@@ -104,7 +104,7 @@ function file({ name, link, ext }) {
               sx={{
                 marginX: 1.5,
                 fontSize: 12,
-                marginTop: 7.4,
+                marginTop: 7.5,
                 borderRadius: 1,
                 textTransform: "capitalize",
                 width: 75,

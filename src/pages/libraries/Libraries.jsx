@@ -8,80 +8,187 @@ import "./libraries.css";
 import LibSearch from "./components/LibSearch";
 
 function Libraries() {
-  const lib1 = [
+  const libraries = [
     {
-      foldername: "folder1",
-      subfiles: [
-        { filename: "file6", link: "https://www.google.com/", ext: "pdf" },
-        { filename: "file7", link: "https://www.google.com/", ext: "" },
-      ],
-      subfolder: [
+      name: "First Library",
+      disc: "This is the description of Libraryone. This is the description of Libraryone. This is the description of Libraryone. This is the description of Libraryone. This is the description of Libraryone",
+      owner: "Naukhaiz Anjum",
+      tags: [{ tag: "First Tag" }, { tag: "tag2" }, { tag: "tag3" }],
+
+      subcontent: [
         {
-          foldername: "folder4",
+          foldername: "folder1",
+          subfiles: [
+            { filename: "file6", link: "https://www.google.com/", ext: "pdf" },
+            { filename: "file7", link: "https://www.google.com/", ext: "" },
+          ],
           subfolder: [
             {
-              foldername: "folder8",
+              foldername: "folder4",
+              subfolder: [
+                {
+                  foldername: "folder8",
+                  subfolder: [],
+                  subfiles: [
+                    {
+                      filename: "subfile of folder8",
+                      link: "https://www.google.com/",
+                      ext: "xls",
+                    },
+                  ],
+                },
+              ],
+              subfiles: [
+                {
+                  filename: "file of folder4",
+                  link: "https://www.google.com/",
+                  ext: "doc",
+                },
+              ],
+            },
+            {
+              foldername: "folder5",
               subfolder: [],
               subfiles: [
                 {
-                  filename: "subfile of folder8",
+                  filename: "subfile of folder5",
                   link: "https://www.google.com/",
-                  ext: "xls",
+                  ext: "",
                 },
               ],
             },
           ],
-          subfiles: [
-            {
-              filename: "file of folder4",
-              link: "https://www.google.com/",
-              ext: "doc",
-            },
-          ],
         },
-        {
-          foldername: "folder5",
-          subfolder: [],
-          subfiles: [
-            {
-              filename: "subfile of folder5",
-              link: "https://www.google.com/",
-              ext: "",
-            },
-          ],
-        },
-      ],
-    },
 
-    {
-      foldername: "folder2",
-      subfolder: [
         {
-          foldername: "folder6",
+          foldername: "folder2",
           subfolder: [
-            { foldername: "folder9", subfolder: [], subfiles: [] },
-            { foldername: "folder10", subfolder: [], subfiles: [] },
+            {
+              foldername: "folder6",
+              subfolder: [
+                { foldername: "folder9", subfolder: [], subfiles: [] },
+                { foldername: "folder10", subfolder: [], subfiles: [] },
+              ],
+              subfiles: [
+                {
+                  filename: "file13",
+                  link: "https://www.google.com/",
+                  ext: "",
+                },
+                {
+                  filename: "file14",
+                  link: "https://www.google.com/",
+                  ext: "",
+                },
+              ],
+            },
+            { foldername: "folder7", subfolder: [], subfiles: [] },
+            { filename: "file8", link: "https://www.google.com/", ext: "" },
+            { filename: "file9", link: "https://www.google.com/", ext: "" },
           ],
+          subfiles: [],
+        },
+
+        { filename: "file1", link: "https://www.google.com/", ext: "" },
+        { filename: "file2", link: "https://www.google.com/", ext: "jpg" },
+        { filename: "file3", link: "https://www.google.com/", ext: "rar" },
+        { filename: "file4", link: "https://www.google.com/", ext: "xlsx" },
+        { filename: "file5", link: "https://www.google.com/", ext: "txt" },
+        { filename: "file6", link: "https://www.google.com/", ext: "doc" },
+        { filename: "file7", link: "https://www.google.com/", ext: "ppt" },
+        { filename: "file8", link: "https://www.google.com/", ext: "" },
+      ],
+    },
+    {
+      name: "Second Library",
+      disc: "This is the description of Library two. This is the description of Library two. This is the description of Library two. This is the description of Library two. This is the description of Library two",
+      owner: "Naukhaiz Anjum",
+      tags: [{ tag: "First Tag" }, { tag: "tag2" }, { tag: "tag3" }],
+
+      subcontent: [
+        {
+          foldername: "folder1",
           subfiles: [
-            { filename: "file13", link: "https://www.google.com/", ext: "" },
-            { filename: "file14", link: "https://www.google.com/", ext: "" },
+            { filename: "file6", link: "https://www.google.com/", ext: "pdf" },
+            { filename: "file7", link: "https://www.google.com/", ext: "" },
+          ],
+          subfolder: [
+            {
+              foldername: "folder4",
+              subfolder: [
+                {
+                  foldername: "folder8",
+                  subfolder: [],
+                  subfiles: [
+                    {
+                      filename: "subfile of folder8",
+                      link: "https://www.google.com/",
+                      ext: "xls",
+                    },
+                  ],
+                },
+              ],
+              subfiles: [
+                {
+                  filename: "file of folder4",
+                  link: "https://www.google.com/",
+                  ext: "doc",
+                },
+              ],
+            },
+            {
+              foldername: "folder5",
+              subfolder: [],
+              subfiles: [
+                {
+                  filename: "subfile of folder5",
+                  link: "https://www.google.com/",
+                  ext: "",
+                },
+              ],
+            },
           ],
         },
-        { foldername: "folder7", subfolder: [], subfiles: [] },
-        { filename: "file8", link: "https://www.google.com/", ext: "" },
-        { filename: "file9", link: "https://www.google.com/", ext: "" },
-      ],
-      subfiles: [],
-    },
 
-    { filename: "file1", link: "https://www.google.com/", ext: "" },
-    { filename: "file2", link: "https://www.google.com/", ext: "jpg" },
-    { filename: "file3", link: "https://www.google.com/", ext: "rar" },
-    { filename: "file4", link: "https://www.google.com/", ext: "xlsx" },
-    { filename: "file5", link: "https://www.google.com/", ext: "txt" },
-    { filename: "file6", link: "https://www.google.com/", ext: "doc" },
-    { filename: "file7", link: "https://www.google.com/", ext: "ppt" },
-    { filename: "file8", link: "https://www.google.com/", ext: "" },
+        {
+          foldername: "folder2",
+          subfolder: [
+            {
+              foldername: "folder6",
+              subfolder: [
+                { foldername: "folder9", subfolder: [], subfiles: [] },
+                { foldername: "folder10", subfolder: [], subfiles: [] },
+              ],
+              subfiles: [
+                {
+                  filename: "file13",
+                  link: "https://www.google.com/",
+                  ext: "",
+                },
+                {
+                  filename: "file14",
+                  link: "https://www.google.com/",
+                  ext: "",
+                },
+              ],
+            },
+            { foldername: "folder7", subfolder: [], subfiles: [] },
+            { filename: "file8", link: "https://www.google.com/", ext: "" },
+            { filename: "file9", link: "https://www.google.com/", ext: "" },
+          ],
+          subfiles: [],
+        },
+
+        { filename: "task1", link: "https://www.google.com/", ext: "" },
+        { filename: "file1", link: "https://www.google.com/", ext: "xlsx" },
+        { filename: "task2", link: "https://www.google.com/", ext: "jpg" },
+        { filename: "file3", link: "https://www.google.com/", ext: "doc" },
+        { filename: "file4", link: "https://www.google.com/", ext: "rar" },
+        { filename: "file5", link: "https://www.google.com/", ext: "txt" },
+        { filename: "file6", link: "https://www.google.com/", ext: "ppt" },
+        { filename: "file7", link: "https://www.google.com/", ext: "" },
+      ],
+    },
   ];
   const cardStyle = {
     mx: "5%",
@@ -101,30 +208,18 @@ function Libraries() {
       </style>
       <LibSearch />
       <div className="libMain">
-        <Card sx={cardStyle}>
-          <ShowLibInfo />
-          <h4 style={{ margin: 14, marginLeft: 20 }}>First Library</h4>
+        {libraries.map((lib) => {
+          return (
+            <Card sx={cardStyle}>
+              <ShowLibInfo libinfo={lib} />
+              <h4 style={{ margin: 14, marginLeft: 20 }}>{lib.name}</h4>
 
-          <div className="libComponents">
-            <ShowContent content={lib1} />
-          </div>
-        </Card>
-        <Card sx={cardStyle}>
-          <ShowLibInfo />
-          <h4 style={{ margin: 14, marginLeft: 20 }}>Second Library</h4>
-
-          <div className="libComponents">
-            <ShowContent content={lib1} />
-          </div>
-        </Card>
-        <Card sx={cardStyle}>
-          <ShowLibInfo />
-          <h4 style={{ margin: 14, marginLeft: 20 }}>Third Library</h4>
-
-          <div className="libComponents">
-            <ShowContent content={lib1} />
-          </div>
-        </Card>
+              <div className="libComponents">
+                <ShowContent content={lib.subcontent} />
+              </div>
+            </Card>
+          );
+        })}
       </div>
       <Box display="flex" justifyContent="center" alignItems="center">
         <Pagination count={5} sx={{ mt: "30px", mb: "30px" }} />

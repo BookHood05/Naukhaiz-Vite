@@ -26,7 +26,7 @@ const style = {
   width: { xs: "78%", sm: "55%" },
 };
 
-export default function TransitionsModal() {
+export default function TransitionsModal({libinfo}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -85,7 +85,7 @@ export default function TransitionsModal() {
                 <Grid item lg={10} md={10} sm={10} xs={10}>
                   <Chip
                     className="swiper-heading"
-                    label={"First Library"}
+                    label={libinfo.name}
                     sx={{
                       width: "100%",
                       mt: "10px",
@@ -132,7 +132,7 @@ export default function TransitionsModal() {
                 avatar={
                   <Avatar className="libOwnerChip" alt="Natacha" src="" />
                 }
-                label="Naukhaiz Anjum"
+                label={libinfo.owner}
                 variant="outlined"
                 sx={{
                   mt: 0.9,
@@ -242,12 +242,7 @@ export default function TransitionsModal() {
               id="transition-modal-description"
               sx={{ ml: 2, color: "#283655" }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore
-              reiciendis expedita nam incidunt! Numquam, in eum recusandae sint
-              ea est corporis nihil modi? Expedita quaerat et similique, ea
-              aliquid recusandae exercitationem quos nemo eveniet eaque ratione
-              ad rerum aspernatur voluptate cumque incidunt cum veritatis error
-              maxime odio atque doloribus ducimus.
+              {libinfo.disc}
             </Typography>
           </Box>
         </Fade>

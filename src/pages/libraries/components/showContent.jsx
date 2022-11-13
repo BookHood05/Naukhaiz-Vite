@@ -51,7 +51,7 @@ function showContent({ content }) {
                         <Button
                           sx={{
                             minWidth: 130,
-                            minHeight: 130,
+                            LibraryminHeight: 130,
                           }}
                           onClick={() => {
                             {
