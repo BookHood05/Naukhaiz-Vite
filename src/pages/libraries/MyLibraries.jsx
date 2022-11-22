@@ -3,6 +3,8 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import ShowMylibContent from "./components/showMylibContent";
 import Card from "@mui/material/Card";
+import Grow from "@mui/material/Grow";
+
 import "./libraries.css";
 
 function MyLibraries() {
@@ -102,9 +104,7 @@ function MyLibraries() {
         </Card>
 
         {/* second card */}
-        <Card
-          sx={cardStyle}
-        >
+        <Card sx={cardStyle}>
           <h4 style={{ margin: 14, marginLeft: 20 }}>Second Library</h4>
 
           <div className="libComponents">

@@ -9,6 +9,8 @@ import { Navigation, Mousewheel } from "swiper";
 import ShowContent from "./showContent";
 import "../libraries.css";
 import Button from "@mui/material/Button";
+import Grow from "@mui/material/Grow";
+import Collapse from "@mui/material/Collapse";
 
 function showContent({ content }) {
   const [flag, setFlag] = useState(false);
@@ -48,42 +50,48 @@ function showContent({ content }) {
                   {folder.foldername && (
                     <>
                       <SwiperSlide>
-                        <Button
-                          sx={{
-                            minWidth: 130,
-                            LibraryminHeight: 130,
-                          }}
-                          onClick={() => {
-                            {
-                              setSubContent([
-                                ...folder.subfolder,
-                                ...folder.subfiles,
-                              ]);
+                        <Grow in={true} style={{ transformOrigin: "0 0 0" }}>
+                          <Button
+                            sx={{
+                              minWidth: 130,
+                              LibraryminHeight: 130,
+                            }}
+                            onClick={() => {
                               {
-                                (folder.subfolder || folder.subfiles) && !flag
-                                  ? setFlag(true) ||
-                                    setOpenFolder(folder.foldername)
-                                  : setFlag(false) || setOpenFolder(false);
+                                setSubContent([
+                                  ...folder.subfolder,
+                                  ...folder.subfiles,
+                                ]);
+                                {
+                                  (folder.subfolder || folder.subfiles) && !flag
+                                    ? setFlag(true) ||
+                                      setOpenFolder(folder.foldername)
+                                    : setFlag(false) || setOpenFolder(false);
+                                }
                               }
-                            }
-                          }}
-                        >
-                          <Folder
-                            name={folder.foldername}
-                            openFolder={openFolder}
-                          />
-                        </Button>
+                            }}
+                          >
+                            <Folder
+                              name={folder.foldername}
+                              openFolder={openFolder}
+                            />
+                          </Button>
+                        </Grow>
                       </SwiperSlide>
                     </>
                   )}
                   {folder.filename && (
                     <>
                       <SwiperSlide>
-                        <File
-                          name={folder.filename}
-                          link={folder.link}
-                          ext={folder.ext}
-                        />
+                        <Grow in={true} style={{ transformOrigin: "0 0 0" }}>
+                          <Button>
+                            <File
+                              name={folder.filename}
+                              link={folder.link}
+                              ext={folder.ext}
+                            />
+                          </Button>
+                        </Grow>
                       </SwiperSlide>
                     </>
                   )}
@@ -93,17 +101,32 @@ function showContent({ content }) {
           })}
         </Swiper>
       </div>
-      {flag && (
-        <>
-          <div className="libComponents">
-            <ShowContent content={subcontent} />
-          </div>
-        </>
-      )}
+      <Collapse in={flag}>
+        {flag && (
+          <>
+            <Grow
+              in={true}
+              style={{ transformOrigin: "0 0 0" }}
+              {...(true ? { timeout: 250 } : {})}
+            >
+              <div className="libComponents">
+                <ShowContent content={subcontent} />
+              </div>
+            </Grow>
+          </>
+        )}
+      </Collapse>
+
       {flag && !subcontent.length && (
-        <Typography sx={{ m: 8, mt: -16, fontSize: 48, fontWeight: "bold" }}>
-          No content in the folder
-        </Typography>
+        <Grow
+          in={true}
+          style={{ transformOrigin: "0 0 0" }}
+          {...(true ? { timeout: 250 } : {})}
+        >
+          <Typography sx={{ m: 8, mt: -16, fontSize: 48, fontWeight: "bold" }}>
+            No content in the folder
+          </Typography>
+        </Grow>
       )}
     </>
   );

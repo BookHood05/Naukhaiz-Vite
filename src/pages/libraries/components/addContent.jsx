@@ -1,45 +1,82 @@
 import * as React from "react";
+import { useRef } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
-import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import "../libraries.css";
 import addFileIcon from "../images/add-file.png";
+import PropTypes from "prop-types";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 
 const addContent = () => {
   const [open, setOpen] = React.useState(false);
   const [choice, setChoice] = React.useState(true);
-  const [addFileFlag, setAddFile] = React.useState(false);
-  const [addFolderFlag, setAddFolder] = React.useState(false);
+  const fileName = useRef(null);
+  const folderName = useRef(null);
+
   const handleClickOpen = () => {
     setOpen(true);
   };
   function fileSubmit() {
     handleClose();
+    addFile();
   }
   function folderSubmit() {
     handleClose();
+    addFolder();
   }
 
   const handleClose = () => {
     setOpen(false);
-    setAddFile(false);
-    setAddFolder(false);
     setChoice(true);
   };
 
   function addFile() {
-    setChoice(false);
-    setAddFile(true);
+    console.log("The name of the file is: " + fileName.current());
   }
-  function addFolder() {
-    setChoice(false);
-    setAddFolder(true);
+  function addFolder() {}
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+  function TabPanel(props) {
+    const { children, value, index, ...other } = props;
+
+    return (
+      <div
+        role="tabpanel"
+        hidden={value !== index}
+        id={`simple-tabpanel-${index}`}
+        aria-labelledby={`simple-tab-${index}`}
+        {...other}
+      >
+        {value === index && (
+          <Box sx={{ p: 3 }}>
+            <Typography>{children}</Typography>
+          </Box>
+        )}
+      </div>
+    );
+  }
+
+  TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired,
+  };
+
+  function a11yProps(index) {
+    return {
+      id: `simple-tab-${index}`,
+      "aria-controls": `simple-tabpanel-${index}`,
+    };
   }
 
   return (
@@ -80,97 +117,73 @@ const addContent = () => {
       </Button>
       <div>
         <Dialog open={open} onClose={handleClose}>
-          <DialogTitle>Add File/Folder</DialogTitle>
+          <DialogTitle sx={{ fontSize: 20, mt: -1, mb: -2, ml: -1 }}>
+            Add File/Folder
+          </DialogTitle>
+
+          {/* File Add Tab  */}
+
           {choice && (
             <>
-              <DialogContent>
-                <div className="addContentDialog">
-                  <Button
-                    className="addContentButtons"
-                    sx={{
-                      marginX: 10,
-                      marginY: 3,
-                      color: "black",
-                    }}
-                    onClick={addFile}
+              <Box sx={{ width: "100%" }}>
+                <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+                  <Tabs
+                    value={value}
+                    onChange={handleChange}
+                    aria-label="basic tabs example"
                   >
-                    <img src="https://cdn-icons-png.flaticon.com/128/6853/6853377.png"></img>
-                    Add File
-                  </Button>
+                    <Tab label="Add File" {...a11yProps(0)} />
+                    <Tab label="Add Folder" {...a11yProps(1)} />
+                  </Tabs>
+                </Box>
+                <TabPanel value={value} index={0}>
+                  <div className="fileAdd">
+                    <TextField
+                      id="standard-basic"
+                      label="File Name"
+                      variant="standard"
+                      ref={fileName}
+                      required
+                      sx={{
+                        marginRight: 50,
+                        marginBottom: 9,
+                        marginTop: -3,
+                        width: "100%",
+                      }}
+                    />
+                    <input type="file" required />
+                    <Button
+                      variant="contained"
+                      onClick={fileSubmit}
+                      sx={{ mt: 1, mb: -0.5 }}
+                    >
+                      Add
+                    </Button>
+                  </div>
+                </TabPanel>
+                {/* Folder Add Tab */}
 
-                  <Button
-                    className="addContentButtons"
-                    sx={{
-                      marginX: 10,
-                      marginY: 3,
-                      color: "black",
-                    }}
-                    onClick={addFolder}
-                  >
-                    <img src="https://cdn-icons-png.flaticon.com/128/6940/6940607.png"></img>
-                    Add Folder
-                  </Button>
-                </div>
-              </DialogContent>
-            </>
-          )}
-
-          {/* File Add Dialog Box */}
-
-          {addFileFlag && (
-            <>
-              <Dialog open={open} onClose={handleClose}>
-                <DialogTitle>Add File</DialogTitle>
-
-                <>
-                  <DialogContent>
-                    <div className="fileAdd">
-                      <TextField
-                        id="standard-basic"
-                        label="File Name"
-                        variant="standard"
-                        required
-                        sx={{ marginRight: 40, marginBottom: 2, width: 400 }}
-                      />
-                      <input type="file" required />
-                    </div>
-                    <DialogActions>
-                      <Button variant="contained" onClick={fileSubmit}>
-                        Submit
-                      </Button>
-                    </DialogActions>
-                  </DialogContent>
-                </>
-              </Dialog>
-            </>
-          )}
-
-          {/* Folder Add Dialog Box */}
-
-          {addFolderFlag && (
-            <>
-              <Dialog open={open} onClose={handleClose}>
-                <DialogTitle>Add Folder</DialogTitle>
-
-                <>
-                  <DialogContent>
-                    <div className="fileAdd">
-                      <TextField
-                        id="standard-basic"
-                        label="Folder Name"
-                        variant="standard"
-                        required
-                        sx={{ marginRight: 40, marginBottom: 2, width: 400 }}
-                      />
-                    </div>
-                    <DialogActions>
-                      <Button variant="contained" onClick={folderSubmit}>
-                        Submit
-                      </Button>
-                    </DialogActions>
-                  </DialogContent>
-                </>
-              </Dialog>
+                <TabPanel value={value} index={1}>
+                  <div className="fileAdd">
+                    <TextField
+                      id="standard-basic"
+                      label="Folder Name"
+                      variant="standard"
+                      ref={folderName}
+                      required
+                      sx={{
+                        marginRight: 50,
+                        marginBottom: 11,
+                        marginTop: -4,
+                        width: "100%",
+                      }}
+                    />
+                    <Button variant="contained" onClick={folderSubmit}>
+                      Add
+                    </Button>
+                  </div>
+                </TabPanel>
+              </Box>
             </>
           )}
         </Dialog>
