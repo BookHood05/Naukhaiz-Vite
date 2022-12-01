@@ -14,10 +14,11 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
-const addContent = () => {
+const addContent = ({ setContent, content }) => {
   const [open, setOpen] = React.useState(false);
   const [choice, setChoice] = React.useState(true);
-  const fileName = useRef(null);
+  var newContent = {};
+  const fileName = useRef();
   const folderName = useRef(null);
 
   const handleClickOpen = () => {
@@ -37,10 +38,20 @@ const addContent = () => {
     setChoice(true);
   };
 
-  function addFile() {
-    console.log("The name of the file is: " + fileName.current());
-  }
-  function addFolder() {}
+  const addFile = () => {
+    newContent = { filename: fileName.current.value, ext: "jpg", link: "" };
+    setContent(newContent);
+    content.push(newContent);
+  };
+  const addFolder = () => {
+    newContent = {
+      foldername: folderName.current.value,
+      subfiles: [],
+      subfolder: [],
+    };
+    setContent(newContent);
+    content.push(newContent);
+  };
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -142,7 +153,7 @@ const addContent = () => {
                       id="standard-basic"
                       label="File Name"
                       variant="standard"
-                      ref={fileName}
+                      inputRef={fileName}
                       required
                       sx={{
                         marginRight: 50,
@@ -169,7 +180,7 @@ const addContent = () => {
                       id="standard-basic"
                       label="Folder Name"
                       variant="standard"
-                      ref={folderName}
+                      inputRef={folderName}
                       required
                       sx={{
                         marginRight: 50,

@@ -16,6 +16,7 @@ function showMylibContent({ content }) {
   const [flag, setFlag] = useState(false);
   const [subcontent, setSubContent] = useState([]);
   const [openFolder, setOpenFolder] = React.useState(false);
+  const [newContent, setNewContent] = React.useState({});
 
   return (
     <>
@@ -103,8 +104,8 @@ function showMylibContent({ content }) {
           {
             <>
               <SwiperSlide>
-                <AddContent />
-              </SwiperSlide>
+                <AddContent setContent={setNewContent} content={content} />
+d              </SwiperSlide>
             </>
           }
         </Swiper>
